@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seger.In | Asinan Buah Segar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- BAGIAN NAVIGASI -->
+  <header>
+    <div class="nav">
+      <a class="brand" href="#beranda">
+        <img src="assets/logo-segerin.png" alt="Logo Seger.In">
+        <span>Seger.In</span>
+      </a>
+      <nav aria-label="Navigasi utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#menu">Menu</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#pesan">Pesan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- BAGIAN BERANDA / HERO -->
+    <section class="hero" id="beranda">
+      <div>
+        <span class="eyebrow">🍍 Segar setiap gigitan</span>
+        <h1>Segarnya bikin <span>nagih!</span></h1>
+        <p>
+          Nikmati asinan buah Seger.In dengan perpaduan rasa manis, asam,
+          dan pedas yang menyegarkan. Tersedia pilihan full buah untuk
+          menemani waktu santai kamu.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#menu">Lihat Menu</a>
+          <a class="btn secondary" href="#pesan">Cara Pesan</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/logo-segerin.png" alt="Logo resmi produk Seger.In">
+      </div>
+    </section>
+
+    <!-- BAGIAN KEUNGGULAN -->
+    <section id="tentang">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Kenapa pilih Seger.In?</h2>
+          <p>Camilan buah yang bikin hari kamu makin ceria.</p>
+        </div>
+        <div class="features">
+          <article class="feature">
+            <div class="emoji">🍎</div>
+            <h3>Buah Segar</h3>
+            <p>Perpaduan buah pilihan dengan rasa yang menyenangkan.</p>
+          </article>
+          <article class="feature">
+            <div class="emoji">🌶️</div>
+            <h3>Kuah Khas</h3>
+            <p>Rasa manis, asam, dan pedas dalam satu sajian.</p>
+          </article>
+          <article class="feature">
+            <div class="emoji">🥡</div>
+            <h3>Kemasan Praktis</h3>
+            <p>Dikemas dalam cup praktis untuk dinikmati kapan saja.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAGIAN MENU: FOTO PRODUK UTAMA TETAP DIPERTAHANKAN -->
+    <section id="menu">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Menu Favorit</h2>
+          <p>Asinan buah segar dengan kuah khas yang bikin nagih.</p>
+        </div>
+
+        <div class="products">
+          <article class="product">
+            <div class="product-visual">
+              <img src="assets/asinan-buah.png" alt="Foto kemasan cup asinan buah Seger.In">
+            </div>
+            <div class="product-body">
+              <h3>Asinan Buah Seger.In</h3>
+              <p>
+                Potongan buah segar dalam cup praktis, dipadukan dengan kuah
+                asinan bercita rasa asam, manis, dan pedas.
+              </p>
+              <div class="price-row">
+                <span class="price">Mulai Rp12.000</span>
+                <button class="btn primary" type="button" onclick="pilihMenu()">Pilih Menu</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- KATALOG VARIAN: SENGAJA TANPA FOTO PER VARIAN -->
+        <div class="section-heading variant-heading">
+          <h2>4 Varian Full Buah</h2>
+          <p>Pilih rasa favoritmu. Semua varian disajikan dengan kuah khas Seger.In.</p>
+        </div>
+        <div class="variant-grid">
+          <article class="variant-card">
+            <span class="variant-number">01</span>
+            <h3>Bengkuang Segar</h3>
+            <p>Full buah bengkuang dengan sensasi renyah.</p>
+          </article>
+          <article class="variant-card">
+            <span class="variant-number">02</span>
+            <h3>Timun Segar</h3>
+            <p>Full buah timun yang ringan dan menyegarkan.</p>
+          </article>
+          <article class="variant-card">
+            <span class="variant-number">03</span>
+            <h3>Nanas Segar</h3>
+            <p>Full buah nanas dengan rasa asam-manis.</p>
+          </article>
+          <article class="variant-card">
+            <span class="variant-number">04</span>
+            <h3>Mangga Segar</h3>
+            <p>Full buah mangga dengan cita rasa khas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAGIAN FORM PEMESANAN -->
+    <section class="order" id="pesan">
+      <div class="section-inner order-wrap">
+        <div class="order-copy">
+          <h2>Yuk, pesan asinanmu!</h2>
+          <p>
+            Isi detail pesanan, pilih varian favorit, lalu tekan tombol WhatsApp.
+            Pesanan akan disiapkan sebagai pesan agar mudah dikirim ke penjual.
+          </p>
+          <p>Seger.In — Rasa Segar di Setiap Gigitan!</p>
+        </div>
+
+        <form class="order-card" onsubmit="kirimPesanan(event)">
+          <h3>Formulir Pemesanan</h3>
+
+          <label for="nama">Nama pembeli</label>
+          <input id="nama" name="nama" type="text" placeholder="Masukkan nama kamu" required>
+
+          <label for="menuPilihan">Pilih varian</label>
+          <select id="menuPilihan" name="menu" required onchange="perbaruiHarga()">
+            <option value="Asinan Segerin">Asinan Segerin — Rp12.000</option>
+            <option value="Bengkuang Segar">Bengkuang Segar — Rp12.000</option>
+            <option value="Timun Segar">Timun Segar — Rp12.000</option>
+            <option value="Nanas Segar">Nanas Segar — Rp12.000</option>
+            <option value="Mangga Segar">Mangga Segar — Rp12.000</option>
+          </select>
+
+          <p class="selected-price">Harga: <strong id="hargaPilihan">Rp12.000</strong> / porsi</p>
+
+          <label for="jumlah">Jumlah porsi</label>
+          <input id="jumlah" name="jumlah" type="number" min="1" value="1" required oninput="perbaruiHarga()">
+
+          <p class="total-price">Total perkiraan: <strong id="totalHarga">Rp12.000</strong></p>
+
+          <label for="catatan">Catatan pesanan (opsional)</label>
+          <textarea id="catatan" name="catatan" placeholder="Contoh: kuah dipisah"></textarea>
+
+          <button class="btn primary" type="submit">Pesan via WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- BAGIAN FOOTER / KONTAK -->
+  <footer>
+    <img src="assets/logo-segerin.png" alt="Logo Seger.In">
+    <strong>Seger.In — Asinan Buah Segar</strong>
+    <p>Rasa Segar di Setiap Gigitan</p>
+    <p>Instagram: @Seger.In13 · WhatsApp: 0813-7474-7149</p>
+    <p>Lokasi: RT.5/RW.1, Kp Baru, Desa Pasirjaya</p>
+    <p>© <span id="tahun"></span> Seger.In</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
