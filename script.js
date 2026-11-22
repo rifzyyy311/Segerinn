@@ -1,7 +1,7 @@
 const NOMOR_WHATSAPP_PENJUAL = "6281374747149";
 
 const HARGA_VARIAN = {
-  "Asinan Buah Segerin": 12000,
+  "Asinan Segerin": 12000,
   "Bengkuang Segar": 12000,
   "Timun Segar": 12000,
   "Nanas Segar": 12000,
@@ -51,7 +51,7 @@ function kirimPesanan(event) {
     "https://wa.me/" + NOMOR_WHATSAPP_PENJUAL +
     "?text=" + encodeURIComponent(pesan);
 
-  window.open(linkWhatsApp, "_blank");
+  window.location.href = linkWhatsApp;
 }
 
 perbaruiHarga();
